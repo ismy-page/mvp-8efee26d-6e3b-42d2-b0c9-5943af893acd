@@ -6,7 +6,13 @@
   const out = document.getElementById("ctaResult");
   if (btn && out) {
     btn.addEventListener("click", () => {
-      out.textContent = "Lovely choice. Now tailor the words and colors to your story.";
+      const subject = encodeURIComponent("Commission: Talking Masterpiece");
+      const body = encodeURIComponent(
+        "Hi — I’d like to commission a talking artwork.\n\nArtwork/idea: \nTimeline: \nUsage (personal/social/install): \nBudget: \n\nThanks!"
+      );
+      out.textContent = "Opening your email client…";
+      window.location.href = `mailto:hello@example.com?subject=${subject}&body=${body}`;
     });
   }
 })();
+
